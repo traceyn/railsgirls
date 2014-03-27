@@ -5,6 +5,7 @@ class IdeasController < ApplicationController
   # GET /ideas.json
   def index
     @ideas = Idea.all
+    @great_icecream_ideas = Idea.great_icecream_ideas
   end
 
   # GET /ideas/1
@@ -34,6 +35,15 @@ class IdeasController < ApplicationController
         format.html { render action: 'new' }
         format.json { render json: @idea.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def icecream
+    @idea = Idea.to_eat_icecream
+
+    respond_to do |format|
+      format.html { redirect_to ideas_path, notice: 'Idea was successfully created.' }
+      format.json { render action: 'show', status: :created, location: @idea }
     end
   end
 

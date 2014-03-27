@@ -22,4 +22,19 @@ describe Idea do
     end
   end
 
+  describe '.to_eat_icecream' do
+    it "sets the name and description of an idea" do
+      idea = Idea.to_eat_icecream
+      expect(idea.name).to eq "Eat Icecream"
+      expect(idea.description).to eq "Yum! That's a great idea"
+    end
+  end
+
+  describe '.great_icecream_ideas' do
+    it "fetches all the ideas with 'great idea' in the description and 'Eat Icecream' as the name" do
+      idea = Idea.to_eat_icecream
+      expect(Idea.great_icecream_ideas).to include(idea)
+    end
+  end
+
 end
