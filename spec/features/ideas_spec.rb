@@ -17,13 +17,17 @@ feature "Creating an idea" do
     within('#new_user') do
       fill_in 'user_email', with: @user.email
       fill_in 'user_password', with: @user.password
+      sleep 1
     end
     click_button 'Sign in'
     expect(page).to have_content "Logged in as #{@user.email}"
+    sleep 1
     visit '/ideas'
     expect(page).to have_content 'Ideas'
+    sleep 1
     click_link 'Show'
     expect(page).to have_content @idea.name
+    sleep 1
     expect(page).to have_selector("img[src$='#{@idea.picture_url}']")
   end
 
@@ -45,38 +49,25 @@ feature "Editing an idea", js: true do
     within('#new_user') do
       fill_in 'user_email', with: @user.email
       fill_in 'user_password', with: @user.password
+      sleep 1
     end
     click_button 'Sign in'
     expect(page).to have_content "Logged in as #{@user.email}"
+    sleep 1
     visit '/ideas'
     expect(page).to have_content 'Ideas'
+    sleep 1
     click_link 'Edit'
     expect(page).to have_content 'Editing idea'
+    sleep 1
     within('.edit_idea') do
       fill_in 'idea_name', with: 'The worst idea ever'
+      sleep 1
     end
     click_button 'Update Idea'
     expect(page).to have_content 'The worst idea ever'
+    sleep 1
   end
 end
-
-#discussion points:
-#examples of failure scenarios?
-#other examples?
-#should these tests be broken down more?
-#is there too much repetition?
-
-#pros
-#easy to read
-#easy for a human to understand
-#look cool
-
-#cons
-#these tests can be slow to run once you have a lot of them
-#can be difficult to troubleshoot
-#should have corresponding unit tests
-#these test are very fragile, what if you change the text on a button etc?
-
-#a lot of this is subjective
 
 
