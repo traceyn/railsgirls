@@ -42,6 +42,10 @@ group :development, :test do
   gem 'capybara', '~> 2.2.0'
   gem 'selenium-webdriver', '~> 2.40.0'
   gem 'debugger'
+  gem 'spring'
+  gem 'guard-rspec'
+  gem 'spring-commands-rspec'
+  gem 'rb-fsevent'
 end
 
 # Use ActiveModel has_secure_password
