@@ -7,11 +7,11 @@ describe "ideas/show" do
   end
 
   it("renders the show template") do
-  	expect(view).to render_template('show')
-  do
-  	
+    expect(view).to render_template('show')
+  end
+
   it "contains the idea attributes" do
-  	expect(rendered).to have_content(@idea.description)
+    expect(rendered).to have_content(@idea.description)
   end
 
 end
