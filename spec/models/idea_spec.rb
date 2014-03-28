@@ -22,6 +22,21 @@ describe Idea do
     end
   end
 
+  # we want a method so that we know if an idea is more than a year old
+  # perhaps we could display a different background colour based on the
+  # result of the recent? and old? methods
+  describe "#old?" do
+    subject { idea.old? }
+
+    context "when the idea is more than 1 year old" do
+      pending 'write this test and make it pass'
+    end
+
+    context "when the idea is less than 1 year old" do
+      pending 'write this test and make it pass'
+    end
+  end
+
   describe '.to_eat_icecream' do
     it "sets the name and description of an idea" do
       idea = Idea.to_eat_icecream
@@ -66,9 +81,15 @@ describe Idea do
       expect(Idea.new(name: nil)).to_not be_valid
     end
 
+    # we want to make sure that ideas always have a description
     it 'validates the presence of description' do
       pending 'write this test and make it pass'
     end
+
+    # What else could be check?
+    # The length on the idea name
+    # That we can't have two ideas with the same name
+
   end
 
 end
