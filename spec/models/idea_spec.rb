@@ -61,4 +61,14 @@ describe Idea do
     end
   end
 
+  describe 'validations' do
+    it 'validates the presence of name' do
+      expect(Idea.new(name: nil)).to_not be_valid
+    end
+
+    it 'validates the presence of description' do
+      pending 'write this test and make it pass'
+    end
+  end
+
 end
