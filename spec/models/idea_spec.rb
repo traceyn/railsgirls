@@ -38,16 +38,27 @@ describe Idea do
   end
 
   # ---- TEST IDEAS ---- #
+  describe '.newest' do
+    it "returns the most recently added idea" do
+      pending 'write this test and make it pass'
+    end
+  end
+
+  describe '#short_description' do
+    it "returns the description shortened to 20 characters" do
+      pending 'write this test and make it pass'
+    end
+  end
 
   describe '#has_expired' do
     it "returns true if the idea has not been updated for over a year" do
-      pending
+      pending 'write this test and make it pass'
     end
   end
 
   describe '#is_important' do
     it "returns true if the idea has a '*' at the beginning of its name" do
-      pending
+      pending 'write this test and make it pass'
     end
   end
 
@@ -57,7 +68,7 @@ describe Idea do
     it "adds a '*' to the front of the idea name if an idea has a rating of 4 or more" do
       #Note: To get this to pass you will need to add the rating attribute to the idea model yourself.
       #Part of this will involve creating a database migration. Ask for help if you get stuck!
-      pending
+      pending 'write this test and make it pass'
     end
   end
 
