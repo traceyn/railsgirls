@@ -40,13 +40,13 @@ describe Idea do
   # ---- TEST IDEAS ---- #
 
   describe '#has_expired' do
-    it "returns true if the idea has not been updated for over a year"
+    it "returns true if the idea has not been updated for over a year" do
       pending
     end
   end
 
   describe '#is_important' do
-    it "returns true if the idea has a '*' at the beginning of its name"
+    it "returns true if the idea has a '*' at the beginning of its name" do
       pending
     end
   end
@@ -54,11 +54,26 @@ describe Idea do
   # Challenges
 
   describe '#mark_important' do
-    it "adds a '*' to the front of the idea name if an idea has a rating of 4 or more"
+    it "adds a '*' to the front of the idea name if an idea has a rating of 4 or more" do
       #Note: To get this to pass you will need to add the rating attribute to the idea model yourself.
       #Part of this will involve creating a database migration. Ask for help if you get stuck!
       pending
     end
+  end
+
+  describe 'validations' do
+    it 'validates the presence of name' do
+      expect(Idea.new(name: nil)).to_not be_valid
+    end
+
+    # we want to make sure that ideas always have a description
+    it 'validates the presence of description' do
+      pending 'write this test and make it pass'
+    end
+
+    # What else could be check?
+    # The length on the idea name
+    # That we can't have two ideas with the same name
   end
 
 end
