@@ -6,7 +6,7 @@ describe Idea do
     subject { idea.recent? }
 
     context "when the idea is less than 2 days old" do
-      let(:idea) { FactoryGirl.create(:idea) }
+      let(:idea) { FactoryGirl.create(:idea, created_at: Date.today) }
 
       it "returns true" do
         expect(subject).to eq true
@@ -34,6 +34,30 @@ describe Idea do
     it "fetches all the ideas with 'great idea' in the description and 'Eat Icecream' as the name" do
       idea = Idea.to_eat_icecream
       expect(Idea.great_icecream_ideas).to include(idea)
+    end
+  end
+
+  # ---- TEST IDEAS ---- #
+
+  describe '#has_expired' do
+    it "returns true if the idea has not been updated for over a year"
+      pending
+    end
+  end
+
+  describe '#is_important' do
+    it "returns true if the idea has a '*' at the beginning of its name"
+      pending
+    end
+  end
+
+  # Challenges
+
+  describe '#mark_important' do
+    it "adds a '*' to the front of the idea name if an idea has a rating of 4 or more"
+      #Note: To get this to pass you will need to add the rating attribute to the idea model yourself.
+      #Part of this will involve creating a database migration. Ask for help if you get stuck!
+      pending
     end
   end
 
