@@ -25,6 +25,7 @@ describe Idea do
   describe '.to_eat_icecream' do
     it "sets the name and description of an idea" do
       idea = Idea.to_eat_icecream
+      expect(idea).to be_persisted
       expect(idea.name).to eq "Eat Icecream"
       expect(idea.description).to eq "Yum! That's a great idea"
     end

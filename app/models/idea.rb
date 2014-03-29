@@ -12,10 +12,12 @@ class Idea < ActiveRecord::Base
   end
 
   def self.to_eat_icecream
-    idea = Idea.new
-    idea.name = 'Eat Icecream'
-    idea.description = "Yum! That's a great idea"
-    idea.save
-    idea
+    self.create(name: 'Eat Icecream', description: "Yum! That's a great idea")
+
+    # Uncomment to refactor
+    # idea = Idea.new
+    # idea.name = 'Eat Icecream'
+    # idea.description = "Yum! That's a great idea"
+    # idea
   end
 end
