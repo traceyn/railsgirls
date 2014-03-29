@@ -31,10 +31,10 @@ describe Idea do
   end
 
   describe '.great_icecream_ideas' do
-    it "fetches all the ideas with 'great idea' in the description and 'Eat Icecream' as the name" do
+    it "fetches all the ideas with 'great idea' in the description
+        and 'Eat Icecream' as the name" do
       idea = Idea.to_eat_icecream
       expect(Idea.great_icecream_ideas).to include(idea)
     end
   end
-
 end

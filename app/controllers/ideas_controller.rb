@@ -39,12 +39,9 @@ class IdeasController < ApplicationController
   end
 
   def icecream
-    @idea = Idea.to_eat_icecream
-
-    respond_to do |format|
-      format.html { redirect_to ideas_path, notice: 'Idea was successfully created.' }
-      format.json { render action: 'show', status: :created, location: @idea }
-    end
+    # Uncomment these lines to fix the bug
+    # @idea = Idea.to_eat_icecream
+    # redirect_to ideas_path, notice: 'Idea was successfully created.'
   end
 
   # PATCH/PUT /ideas/1

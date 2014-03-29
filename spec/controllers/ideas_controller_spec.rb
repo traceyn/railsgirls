@@ -30,17 +30,18 @@ describe IdeasController do
     end
   end
 
-  describe "POST icecream" do
-    subject(:request){ post :icecream }
+  # Uncomment this block to test
+  # describe "POST icecream" do
+  #   subject(:request){ post :icecream }
 
-    it 'redirects to index page' do
-      expect(request).to redirect_to ideas_path
-    end
+  #   it 'redirects to index page' do
+  #     expect(request).to redirect_to ideas_path
+  #   end
 
-    it 'creates a new icecream idea' do
-      expect(Idea.great_icecream_ideas.count).to eq 0
-      request
-      expect(Idea.great_icecream_ideas.count).to eq 1
-    end
-  end
+  #   it 'creates a new icecream idea' do
+  #     expect(Idea.great_icecream_ideas.count).to eq 0
+  #     request
+  #     expect(Idea.great_icecream_ideas.count).to eq 1
+  #   end
+  # end
 end
